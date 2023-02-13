@@ -1,0 +1,53 @@
+{
+  "name": "imageengine-vue3",
+  "version": "0.0.1",
+  "auth": "Siva Sankar Reddy Bogala",
+  "private": true,
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/main.js",
+  "module": "./dist/main.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/main.js",
+      "require": "./dist/main.js"
+    }
+  },
+  "scripts": {
+    "build": "run-p type-check test:unit:build build-only",
+    "build-only": "vite build",
+    "dev": "vite",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
+    "type-check": "vue-tsc --noEmit --composite false",
+    "test:unit:build": "cross-env ENV=\"TEST\" vitest --environment jsdom --root src/ --run --silent",
+    "test:unit": "cross-env ENV=\"TEST\" vitest --environment jsdom --root src/ --silent",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@imageengine/imageengine-helpers": "^0.1.1",
+    "vue": "^3.2.45"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.1.4",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vitejs/plugin-vue-jsx": "^3.0.0",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "@vue/eslint-config-typescript": "^11.0.0",
+    "@vue/test-utils": "^2.2.6",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.22.0",
+    "eslint-plugin-vue": "^9.3.0",
+    "husky": "^8.0.2",
+    "jsdom": "^20.0.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.7.1",
+    "tslib": "^2.4.1",
+    "vite": "^4.0.3",
+    "vite-plugin-dts": "^1.7.1",
+    "vitest": "^0.25.6",
+    "vue-tsc": "^1.0.12"
+  }
+}
