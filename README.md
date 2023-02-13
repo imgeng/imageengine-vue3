@@ -1,91 +1,217 @@
-# Vue-Library-Template
-## _Configured for all kinds of environments [prod, dev and local]_
-## Features
+# Vue components for ImageEngine integration
 
-- Built with typescript support
-- Built with [vite.dev] (Next Generation Frontend Tooling)
-- Exports types automatically as .d.ts files using [vite-plugin-dts]
-- Configured with [vitest] for unit testing
-- Test components by importing them into index.ts file and running the command  ```yarn run dev```
-- No need to create seperate project to test the library
+Hassle-free way to deliver optimized responsive images in your Vue applications.
 
-## Tech
+## Quick start
 
-Vue-Library-Template uses a number of open source packages to create a production ready vue library:
+The bundle includes three major components:
 
-- [Typescript] - TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
-- [Vue.js] - An approachable, performant and versatile framework for building web user interfaces.
-- [vite.dev] - Next Generation Frontend Tooling
-- [Eslint] - ESLint statically analyzes your code to quickly find problems. It is built into most text editors and you can run ESLint as part of your continuous integration pipeline.    
-- [Prettier] - An opinionated code formatter
-- [Husky] - Husky improves your commits and more 🐶 woof!
-- And many other plugins
+* `<ImageEngineProvider>`
+* `<Image>`
+* `<Source>`
 
-And of course Vue-Library-Template itself is open source with a [public repository][VLT] on GitHub.
+The only prerequisite to start using them is placing `ImageEngineProvider` somewhere above in the DOM tree with the `deliveryAddress` prop set to your [ImageEngine Delivery Address](https://support.imageengine.io/hc/en-us/articles/360059238371-Quick-Start) :
 
-## Installation
-Requires [Node.js](https://nodejs.org/) v10+ to run.
+```vue
+ <template>
+  <div class="content">
+    <ImageEngineProvider deliveryAddress="https://blazing-fast-pics.cdn.imgeng.in">
+      <picture>
+        <SourceComponent
+          :srcSet="[
+            {
+              src: `/images/pic_1_variation_1.jpg`,
+              width: '500w',
+            },
+            {
+              src: `/images/pic_1_variation_2.jpg`,
+              width: '900w',
+              directives: { compression: 0 },
+            },
+          ]"
+          :attributes="{ media: '(max-width: 950px)' }"/>
+        <SourceComponent
+          :srcSet="[
+            {
+              src: `/images/pic_1_variation_1.jpg`,
+              width: '500w',
+            },
+            {
+              src: `/images/pic_1_variation_2.jpg`,
+              width: '900w',
+              directives: { compression: 0 },
+            },
+          ]"
+          :attributes="{
+            media: '(max-width: 950px)',
+            id: 'testid',
+            'data-test': 'test source attribute',
+          }"/>
+        <ImageComponent
+          src="/images/pic_2.jpg"
+          :attributes="{
+            alt: 'test image',
+          }"
+          :directives="{
+              outputFormat: 'webp',
+              rotate: 45,
+              inline: true
+          }"/>
+      </picture>
+    </ImageEngineProvider>
+  </div>
+</template>
 
-Install the dependencies and devDependencies and start the server.
-HTTPS:
-```sh
-git clone https://github.com/ssrbloginsoft/vue-library-template.git 
-```
-SSH:
-```sh
-git clone git@github.com:ssrbloginsoft/vue-library-template.git
-```
-#### _Install_
-```sh 
-npm i
-or
-yarn install
-```
-#### _Build_
-```sh
-yarn run build
-```
-#### _Test_
-```sh
-yarn run test:unit
-```
-#### _Development_
-Run development server to test the component changes by importing it in ```App.vue```. No need to create another project to test the changes.
-```sh
-yarn run dev
-```
-For running linter:
-```sh
-yarn run lint
-```
-#### _Creating a component_
-Create a new component in components folder with ```.vue``` extention and export the component in ```main.ts```:
-```ts 
-export { default as Image } from "@components/Image.vue";
-```
-By running the build command a dist folder will be generated
+<script>
+import {Image, Source, ImageEngineProvider} from "@imageengine/vue";
 
-_Exporting types:_
+export default {
+  components: {
+    ImageComponent: Image,
+    SourceComponent: Source,
+    ImageEngineProvider,
+  },
+};
+</script>
+
+```
+
+```vue
+ <template>
+  <div id="app">
+    <ImageEngineProvider deliveryAddress="https://blazing-fast-pics.cdn.imgeng.in">
+        <ImageComponent src="/images/pic_2.jpg" />
+    </ImageEngineProvider>
+  </div>
+</template>
+
+<script>
+import {Image, ImageEngineProvider} from "@imageengine/vue";
+
+export default {
+  components: {
+    ImageComponent: Image,
+    ImageEngineProvider
+  },
+};
+</script>
+```
+
+[Demo app on CodeSandbox](https://codesandbox.io/s/charming-yonath-9j1cb)
+
+## Component props reference
+
+### ImageEngineProvider
+`deliveryAddress` - [ImageEngine Delivery Address](https://support.imageengine.io/hc/en-us/articles/360059238371-Quick-Start):
+
 ```ts
-export type { User } from "./types";
+deliveryAddress: string
+```
+
+`stripFromSrc` - Strip away a portion of a source string in all ImageEngine's components. Particularly useful if your images are coming from a headless CMS and you need to erase something in received URL path (origin, for example):
+
+```ts
+stripFromSrc?: string
 ```
 
 
+### Image
+`src` - Relative path to the image:
+
+```ts
+src: string
+```
+
+`directives` - ImageEngine directives:
+
+```ts
+directives?: {
+  // Define desired width.
+  width?: number
+  // Set width to auto (with fallback).
+  autoWidthWithFallback?: number
+  // Define desired height.
+  height?: number
+  // Adjust compression.
+  // Possible range: 0-100.
+  compression?: number
+  // Define desired output format.
+  outputFormat?:
+    | "png"
+    | "gif"
+    | "jpg"
+    | "bmp"
+    | "webp"
+    | "jp2"
+    | "svg"
+    | "mp4"
+    | "jxr"
+  // Define desired fit method.
+  fitMethod?: "stretch" | "box" | "letterbox" | "cropbox" | "outside"
+  // Don't apply any optimizations to the origin image.
+  noOptimization?: true
+  // Adjust sharpness.
+  // Possible range: 0-100.
+  sharpness?: number
+  // Define rotation.
+  // Possible range: -360 to 360.
+  rotate?: number
+  // Use WURFL to calculate screen's width and then scale the image accordingly.
+  // Possible range: 0-100 (float).
+  scaleToScreenWidth?: number
+  // Crop the image [width, height, left, top].
+  crop?: number[]
+  // Convert the image into a data url.
+  inline?: true
+  // Keep EXIF data.
+  keepMeta?: true
+  // Force download the image
+  force_download?: true
+}
+```
+
+`srcSet` - List of image variations for the image source set:
+
+```ts
+srcSet?: [{
+  // Relative path to the image.
+  src: string
+  // Width descriptor.
+  width: string
+  // Custom optimization instructions.
+  directives?: TDirectives
+}]
+```
+
+`attributes` - List of additional attributes:
+
+```ts
+attributes?: [{
+  // regular attribute
+  alt: string
+  // ...
+}]
+```
 
 
-## License
+### Source
+`srcSet` - List of image variations for the image source set:
 
-MIT
+```ts
+srcSet?: [{
+  // Relative path to the image.
+  src: string
+  // Width descriptor.
+  width: string
+  directives?: TDirectives
+}]
+```
 
-**Free Software, Hell Yeah!**
+`attributes` - List of additional attributes:
 
-   [VLT]: <https://github.com/ssrbloginsoft/vue-library-template>
-   [vite.dev]: <https://github.com/joemccann/dillinger>
-   [vite-plugin-dts]: <https://github.com/qmhc/vite-plugin-dts>
-   [vitest]: <https://vitest.dev/>
-   [Vue.js]: <https://vuejs.org/>
-   [Eslint]: <https://eslint.org/>
-   [Prettier]: <https://prettier.io/>
-   [Typescript]: <https://www.typescriptlang.org/>
-   [Husky]: <https://www.npmjs.com/package/husky>
-   
+```ts
+attributes?: [{
+  // regular attribute, ex. media: '(max-width: 950px)',
+  // ...
+}]
+```
