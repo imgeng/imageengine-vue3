@@ -1,6 +1,6 @@
 {
-  "name": "imageengine-vue3",
-  "version": "0.0.1",
+  "name": "@imageengine/imageengine-vue3",
+  "version": "0.0.2",
   "auth": "Siva Sankar Reddy Bogala",
   "private": true,
   "type": "module",
