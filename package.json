@@ -2,7 +2,7 @@
   "name": "@imageengine/imageengine-vue3",
   "version": "0.0.2",
   "auth": "Siva Sankar Reddy Bogala",
-  "private": true,
+  "private": false,
   "type": "module",
   "files": [
     "dist"
