@@ -63,7 +63,7 @@ The only prerequisite to start using them is placing `ImageEngineProvider` somew
 </template>
 
 <script>
-import {Image, Source, ImageEngineProvider} from "@imageengine/vue";
+import {Image, Source, ImageEngineProvider} from "@imageengine/vue3";
 
 export default {
   components: {
@@ -97,7 +97,7 @@ export default {
 </script>
 ```
 
-[Demo app on CodeSandbox](https://codesandbox.io/s/charming-yonath-9j1cb)
+[Demo app on CodeSandbox](https://codesandbox.io/s/elegant-panka-nc66jq)
 
 ## Component props reference
 
