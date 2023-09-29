@@ -840,7 +840,7 @@
     eslint-config-prettier "^8.3.0"
     eslint-plugin-prettier "^4.0.0"
 
-"@vue/eslint-config-typescript@^11.0.0":
+"@vue/eslint-config-typescript@^11.0.3":
   version "11.0.3"
   resolved "https://registry.yarnpkg.com/@vue/eslint-config-typescript/-/eslint-config-typescript-11.0.3.tgz#c720efa657d102cd2945bc54b4a79f35d57f6307"
   integrity sha512-dkt6W0PX6H/4Xuxg/BlFj5xHvksjpSlVjtkQCpaYJBIEuKj2hOVU7r+TIe+ysCwRYFz/lGqvklntRkCAibsbPw==
