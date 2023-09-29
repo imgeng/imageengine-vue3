@@ -1,7 +1,7 @@
 {
   "name": "@imageengine/vue3",
-  "version": "0.0.4",
-  "auth": "Siva Sankar Reddy Bogala",
+  "version": "0.0.5",
+  "author": "Siva Sankar Reddy Bogala",
   "private": false,
   "type": "module",
   "files": [
