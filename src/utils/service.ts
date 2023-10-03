@@ -7,7 +7,7 @@ export function constructUrl(src: string, directives: IEDirectives): string {
 
 export function generateSrcSetString(
   srcSet: TSrcSet,
-  deliveryAddress: string
+  deliveryAddress: string,
 ): string {
   return srcSet.reduce((result, { src, width, directives }) => {
     // Extract width directive and always apply it to the image as
@@ -22,7 +22,7 @@ export function generateSrcSetString(
             ...directives,
             ...widthDirective,
           }
-        : widthDirective
+        : widthDirective,
     );
     const entry = `${fullImageUrl} ${width},\n`;
     result += entry;

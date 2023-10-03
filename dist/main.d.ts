@@ -1,11 +1,11 @@
-import type { AllowedComponentProps } from 'vue';
-import type { ComponentCustomProps } from 'vue';
-import type { ComponentOptionsMixin } from 'vue';
-import type { DefineComponent } from 'vue';
-import type { ExtractPropTypes } from 'vue';
+import { AllowedComponentProps } from 'vue';
+import { ComponentCustomProps } from 'vue';
+import { ComponentOptionsMixin } from 'vue';
+import { DefineComponent } from 'vue';
+import { ExtractPropTypes } from 'vue';
 import { IEDirectives } from '@imageengine/imageengine-helpers';
-import type { Ref } from 'vue';
-import type { VNodeProps } from 'vue';
+import { Ref } from 'vue';
+import { VNodeProps } from 'vue';
 
 declare const Image_2: DefineComponent<{
     src: {
@@ -52,7 +52,7 @@ declare const Image_2: DefineComponent<{
 }>>, {
     directives: IEDirectives;
     srcSet: TSrcSet;
-}>;
+}, {}>;
 export { Image_2 as Image }
 
 export declare const ImageEngineProvider: DefineComponent<{
@@ -71,7 +71,7 @@ export declare const ImageEngineProvider: DefineComponent<{
     stripFromSrc: {
         type: StringConstructor;
     };
-}>>, {}>;
+}>>, {}, {}>;
 
 export declare const Source: DefineComponent<{
     srcSet: {
@@ -95,7 +95,7 @@ export declare const Source: DefineComponent<{
     attributes: {
         type: ObjectConstructor;
     };
-}>>, {}>;
+}>>, {}, {}>;
 
 declare type TSrcSet = Array<{
     src: string;

@@ -3,13 +3,14 @@
   "version": "0.0.5",
   "author": "Siva Sankar Reddy Bogala",
   "private": false,
+  "repository": "https://github.com/imgeng/imageengine-vue3",
   "type": "module",
   "files": [
     "dist"
   ],
   "main": "./dist/main.js",
   "module": "./dist/main.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/main.d.ts",
   "exports": {
     ".": {
       "import": "./dist/main.js",
@@ -46,7 +47,7 @@
     "prettier": "^3.0.0",
     "tslib": "2.6.2",
     "vite": "4.4.9",
-    "vite-plugin-dts": "1.7.3",
+    "vite-plugin-dts": "3.6.0",
     "vitest": "^0.34.0",
     "vue-tsc": "1.8.15"
   }
