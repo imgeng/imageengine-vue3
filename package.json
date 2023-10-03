@@ -3,13 +3,14 @@
   "version": "0.0.5",
   "author": "Siva Sankar Reddy Bogala",
   "private": false,
+  "repository": "https://github.com/imgeng/imageengine-vue3",
   "type": "module",
   "files": [
     "dist"
   ],
   "main": "./dist/main.js",
   "module": "./dist/main.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/main.d.ts",
   "exports": {
     ".": {
       "import": "./dist/main.js",
