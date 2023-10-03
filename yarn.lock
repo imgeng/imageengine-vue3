@@ -446,10 +446,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@imageengine/imageengine-helpers@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@imageengine/imageengine-helpers/-/imageengine-helpers-0.1.1.tgz#d31d12d242f1731c2272d1f545caa6aa92a6ee6e"
-  integrity sha512-d6QhcYgxWmcep8Lx/7fJnO9t+dkRKMmtIiyFLXrw9xdhQvgCnQKs/6HxfUEalV0qrlyw8CBjiNhDdCxTCoFAAA==
+"@imageengine/imageengine-helpers@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@imageengine/imageengine-helpers/-/imageengine-helpers-0.2.0.tgz#9877f5daa9991c447c9e96269d749c464741e0eb"
+  integrity sha512-q08Jc/qa9n1ArOwj3lDm+0EPzS7g6bRGV+wEVcNuf3a/UicxuitZuLPfiUU0pZvyhsqMuOehUqZZ8a3ZLMyGkQ==
 
 "@jest/schemas@^29.6.3":
   version "29.6.3"
