@@ -49,7 +49,7 @@ export default defineComponent({
   setup(props) {
     if (!props.src) {
       throw new Error(
-        `Please ensure that the image component has an 'src' prop.`
+        `Please ensure that the image component has an 'src' prop.`,
       );
     }
 
@@ -88,12 +88,12 @@ export default defineComponent({
   created() {
     if (
       !ALLOWED_INPUT_EXTENSIONS.includes(
-        this.imageExtension.toLowerCase() as IEFormat
+        this.imageExtension.toLowerCase() as IEFormat,
       )
     ) {
       console.warn(
         `The following image's extension doesn't match any of the allowed types and won't be optimized: ${this.src}.`,
-        `List of supported extensions: ${ALLOWED_INPUT_EXTENSIONS.join(", ")}.`
+        `List of supported extensions: ${ALLOWED_INPUT_EXTENSIONS.join(", ")}.`,
       );
     }
   },

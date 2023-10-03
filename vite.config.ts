@@ -44,7 +44,7 @@ export default defineConfig({
       rollupTypes: true,
       insertTypesEntry: true,
       copyDtsFiles: true,
-      strictOutput: true
+      strictOutput: true,
     }),
     vue(),
     vueJsx(),

@@ -12,10 +12,10 @@ describe("service", () => {
   ];
   it("generate string url", () => {
     expect(
-      generateSrcSetString(srcset, "https://blazing-fast-pics.cdn.imgeng.in")
+      generateSrcSetString(srcset, "https://blazing-fast-pics.cdn.imgeng.in"),
     ).toBe(
       "https://blazing-fast-pics.cdn.imgeng.in/images/pic_1_variation_2.jpg?imgeng=/cmpr_0/w_900 900w," +
-        `\n`
+        `\n`,
     );
   });
 });
@@ -51,7 +51,7 @@ describe("generateSrcSetString", () => {
 
     const result = generateSrcSetString(
       srcSet,
-      "https://blazing-fast-pics.cdn.imgeng.in"
+      "https://blazing-fast-pics.cdn.imgeng.in",
     );
 
     const expected =

@@ -20,7 +20,7 @@ describe("Image component", () => {
 
     const img = wrapper.get("img");
     expect(img.attributes("src")).toBe(
-      "https://blazing-fast-pics.cdn.imgeng.in/images/pic_1_variation_1.jpg?imgeng=/cmpr_0"
+      "https://blazing-fast-pics.cdn.imgeng.in/images/pic_1_variation_1.jpg?imgeng=/cmpr_0",
     );
   });
 
@@ -65,11 +65,11 @@ describe("Image component", () => {
     const srcSetStringComputed = wrapper.vm.srcSetString;
     expect(srcSetStringComputed).toEqual(
       `https://blazing-fast-pics.cdn.imgeng.in/images/pic.jpg?imgeng=/w_400 400w,\n` +
-        `https://blazing-fast-pics.cdn.imgeng.in/images/pic.jpg?imgeng=/w_800 800w,\n`
+        `https://blazing-fast-pics.cdn.imgeng.in/images/pic.jpg?imgeng=/w_800 800w,\n`,
     );
     expect(imageExtensionComputed).toEqual("jpg");
     expect(imageUrlComputed).toEqual(
-      "https://blazing-fast-pics.cdn.imgeng.in/images/pic.jpg"
+      "https://blazing-fast-pics.cdn.imgeng.in/images/pic.jpg",
     );
   });
 });

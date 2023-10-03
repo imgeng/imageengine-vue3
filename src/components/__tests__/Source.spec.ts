@@ -41,7 +41,7 @@ describe("Source Component", () => {
     });
 
     expect(wrapper.vm.srcSetString).toEqual(
-      `https://blazing-fast-pics.cdn.imgeng.in/images/pic_2.jpg?imgeng=/f_webp/r_60/w_300 300w,\n`
+      `https://blazing-fast-pics.cdn.imgeng.in/images/pic_2.jpg?imgeng=/f_webp/r_60/w_300 300w,\n`,
     );
   });
 });

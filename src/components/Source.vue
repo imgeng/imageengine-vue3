@@ -36,7 +36,7 @@ export default defineComponent({
               src: image.src.replace(this.stripFromSrc, ""),
             }))
           : this.srcSet,
-        this.deliveryAddress
+        this.deliveryAddress,
       );
     },
   },
