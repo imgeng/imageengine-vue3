@@ -141,11 +141,12 @@ directives?: {
     | "gif"
     | "jpg"
     | "bmp"
-    | "c"
+    | "webp"
     | "jp2"
     | "svg"
     | "mp4"
     | "jxr"
+    | "jxl"
   // Define desired fit method.
   fitMethod?: "stretch" | "box" | "letterbox" | "cropbox" | "outside"
   // Don't apply any optimizations to the origin image.
