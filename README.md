@@ -141,7 +141,7 @@ directives?: {
     | "gif"
     | "jpg"
     | "bmp"
-    | "webp"
+    | "c"
     | "jp2"
     | "svg"
     | "mp4"
@@ -167,6 +167,8 @@ directives?: {
   keepMeta?: true
   // Force download the image
   force_download?: true
+  //Maximum DPR (Device Pixel Ratio) to consider when resizing an image.
+  max_device_pixel_ratio: 2.1;   // 1-4 float
 }
 ```
 

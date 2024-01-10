@@ -25,15 +25,15 @@ var u = typeof globalThis < "u" ? globalThis : typeof window < "u" ? window : ty
     max_device_pixel_ratio: "maxdpr",
     maxDevicePixelRatio: "maxdpr"
   };
-  function c(r, t, d) {
-    var o = i(t, d), a = n(o, d), _ = a === "" ? "" : r.includes("?") ? "&" : "?";
-    return "" + r + _ + a;
+  function c(r, t, a) {
+    var o = i(t, a), d = n(o, a), _ = d === "" ? "" : r.includes("?") ? "&" : "?";
+    return "" + r + _ + d;
   }
   e.build_IE_url = c;
   function i(r, t) {
-    return Object.entries(r).reduce(function(d, o) {
-      var a = o[0], _ = o[1];
-      return d + s(a, _, t);
+    return Object.entries(r).reduce(function(a, o) {
+      var d = o[0], _ = o[1];
+      return a + s(d, _, t);
     }, "");
   }
   e.build_IE_directives = i;
@@ -41,9 +41,9 @@ var u = typeof globalThis < "u" ? globalThis : typeof window < "u" ? window : ty
     return r && r !== "" ? "imgeng=" + r : (t && console.warn("build_IE_query_string called with an empty directives_string."), "");
   }
   e.build_IE_query_string = n;
-  function s(r, t, d) {
+  function s(r, t, a) {
     var o = e.OBJECT_TO_DIRECTIVES_MAP[r];
-    return o && (t || t === 0) ? "/" + o + "_" + t : o ? (d && console.warn("Directive '" + r + "' has an invalid value " + t + "."), "") : (d && console.warn("Directive '" + r + "' isn't recognized and won't be applied to the image."), "");
+    return o && (t || t === 0) ? "/" + o + "_" + t : o ? (a && console.warn("Directive '" + r + "' has an invalid value " + t + "."), "") : (a && console.warn("Directive '" + r + "' isn't recognized and won't be applied to the image."), "");
   }
   e.maybe_create_directive = s;
 })(E);
@@ -89,6 +89,10 @@ const S = [
   "webp",
   "jp2",
   "svg",
+  "mp4",
+  "jxr",
+  "avif",
+  "jxl",
   "tif"
 ], j = p({
   // eslint-disable-next-line vue/multi-word-component-names, vue/no-reserved-component-names
