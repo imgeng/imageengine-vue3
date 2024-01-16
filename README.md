@@ -146,6 +146,7 @@ directives?: {
     | "svg"
     | "mp4"
     | "jxr"
+    | "avif"
     | "jxl"
   // Define desired fit method.
   fitMethod?: "stretch" | "box" | "letterbox" | "cropbox" | "outside"
