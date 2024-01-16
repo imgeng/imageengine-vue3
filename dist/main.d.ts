@@ -1,11 +1,9 @@
-import { AllowedComponentProps } from 'vue';
-import { ComponentCustomProps } from 'vue';
 import { ComponentOptionsMixin } from 'vue';
 import { DefineComponent } from 'vue';
 import { ExtractPropTypes } from 'vue';
 import { IEDirectives } from '@imageengine/imageengine-helpers';
+import { PublicProps } from 'vue';
 import { Ref } from 'vue';
-import { VNodeProps } from 'vue';
 
 declare const Image_2: DefineComponent<{
     src: {
@@ -33,7 +31,7 @@ declare const Image_2: DefineComponent<{
     srcSetString(): string;
     imageUrl(): string;
     imageExtension(): string;
-}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<{
     src: {
         type: StringConstructor;
         required: true;
@@ -63,7 +61,7 @@ export declare const ImageEngineProvider: DefineComponent<{
     stripFromSrc: {
         type: StringConstructor;
     };
-}, void, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+}, void, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<{
     deliveryAddress: {
         type: StringConstructor;
         required: true;
@@ -87,7 +85,7 @@ export declare const Source: DefineComponent<{
     stripFromSrc: string;
 }, unknown, {
     srcSetString(): String;
-}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<{
     srcSet: {
         type: () => TSrcSet;
         required: true;

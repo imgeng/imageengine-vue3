@@ -146,6 +146,8 @@ directives?: {
     | "svg"
     | "mp4"
     | "jxr"
+    | "avif"
+    | "jxl"
   // Define desired fit method.
   fitMethod?: "stretch" | "box" | "letterbox" | "cropbox" | "outside"
   // Don't apply any optimizations to the origin image.
@@ -167,6 +169,8 @@ directives?: {
   keepMeta?: true
   // Force download the image
   force_download?: true
+  //Maximum DPR (Device Pixel Ratio) to consider when resizing an image.
+  max_device_pixel_ratio: 2.1;   // 1-4 float
 }
 ```
 
