@@ -28,7 +28,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@imageengine/imageengine-helpers": "^0.2.0",
+    "@imageengine/imageengine-helpers": "^0.2.1",
     "vue": "3.4.15"
   },
   "devDependencies": {

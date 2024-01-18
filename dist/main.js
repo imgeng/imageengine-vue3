@@ -1,5 +1,5 @@
-import { defineComponent as p, inject as l, ref as v, openBlock as f, createElementBlock as m, mergeProps as y, provide as g, renderSlot as O } from "vue";
-var u = typeof globalThis < "u" ? globalThis : typeof window < "u" ? window : typeof global < "u" ? global : typeof self < "u" ? self : {}, b = {}, E = {};
+import { defineComponent as p, inject as l, ref as S, openBlock as f, createElementBlock as m, mergeProps as y, provide as g, renderSlot as $ } from "vue";
+var u = typeof globalThis < "u" ? globalThis : typeof window < "u" ? window : typeof global < "u" ? global : typeof self < "u" ? self : {}, b = {}, w = {};
 (function(e) {
   Object.defineProperty(e, "__esModule", { value: !0 }), e.maybe_create_directive = e.build_IE_query_string = e.build_IE_directives = e.build_IE_url = e.OBJECT_TO_DIRECTIVES_MAP = void 0, e.OBJECT_TO_DIRECTIVES_MAP = {
     width: "w",
@@ -25,62 +25,64 @@ var u = typeof globalThis < "u" ? globalThis : typeof window < "u" ? window : ty
     max_device_pixel_ratio: "maxdpr",
     maxDevicePixelRatio: "maxdpr"
   };
-  function c(r, t, a) {
-    var o = i(t, a), d = n(o, a), _ = d === "" ? "" : r.includes("?") ? "&" : "?";
-    return "" + r + _ + d;
+  function s(t, r, o) {
+    var a = n(r, o), d = c(a, o), _ = d === "" ? "" : t.includes("?") ? "&" : "?";
+    return "".concat(t).concat(_).concat(d);
   }
-  e.build_IE_url = c;
-  function i(r, t) {
-    return Object.entries(r).reduce(function(a, o) {
-      var d = o[0], _ = o[1];
-      return a + s(d, _, t);
+  e.build_IE_url = s;
+  function n(t, r) {
+    return Object.entries(t).reduce(function(o, a) {
+      var d = a[0], _ = a[1];
+      return o + i(d, _, r);
     }, "");
   }
-  e.build_IE_directives = i;
-  function n(r, t) {
-    return r && r !== "" ? "imgeng=" + r : (t && console.warn("build_IE_query_string called with an empty directives_string."), "");
+  e.build_IE_directives = n;
+  function c(t, r) {
+    return t && t !== "" ? "imgeng=".concat(t) : (r && console.warn("build_IE_query_string called with an empty directives_string."), "");
   }
-  e.build_IE_query_string = n;
-  function s(r, t, a) {
-    var o = e.OBJECT_TO_DIRECTIVES_MAP[r];
-    return o && (t || t === 0) ? "/" + o + "_" + t : o ? (a && console.warn("Directive '" + r + "' has an invalid value " + t + "."), "") : (a && console.warn("Directive '" + r + "' isn't recognized and won't be applied to the image."), "");
+  e.build_IE_query_string = c;
+  function i(t, r, o) {
+    var a = e.OBJECT_TO_DIRECTIVES_MAP[t];
+    return a && (r || r === 0) ? "/".concat(a, "_").concat(r) : a ? (o && console.warn("Directive '".concat(t, "' has an invalid value ").concat(r, ".")), "") : (o && console.warn("Directive '".concat(t, "' isn't recognized and won't be applied to the image.")), "");
   }
-  e.maybe_create_directive = s;
-})(E);
-var w = {};
-Object.defineProperty(w, "__esModule", { value: !0 });
+  e.maybe_create_directive = i;
+})(w);
+var E = {};
+Object.defineProperty(E, "__esModule", { value: !0 });
 (function(e) {
-  var c = u && u.__createBinding || (Object.create ? function(n, s, r, t) {
-    t === void 0 && (t = r), Object.defineProperty(n, t, { enumerable: !0, get: function() {
-      return s[r];
-    } });
-  } : function(n, s, r, t) {
-    t === void 0 && (t = r), n[t] = s[r];
-  }), i = u && u.__exportStar || function(n, s) {
-    for (var r in n)
-      r !== "default" && !Object.prototype.hasOwnProperty.call(s, r) && c(s, n, r);
+  var s = u && u.__createBinding || (Object.create ? function(c, i, t, r) {
+    r === void 0 && (r = t);
+    var o = Object.getOwnPropertyDescriptor(i, t);
+    (!o || ("get" in o ? !i.__esModule : o.writable || o.configurable)) && (o = { enumerable: !0, get: function() {
+      return i[t];
+    } }), Object.defineProperty(c, r, o);
+  } : function(c, i, t, r) {
+    r === void 0 && (r = t), c[r] = i[t];
+  }), n = u && u.__exportStar || function(c, i) {
+    for (var t in c)
+      t !== "default" && !Object.prototype.hasOwnProperty.call(i, t) && s(i, c, t);
   };
-  Object.defineProperty(e, "__esModule", { value: !0 }), i(E, e), i(w, e);
+  Object.defineProperty(e, "__esModule", { value: !0 }), n(w, e), n(E, e);
 })(b);
-function I(e, c) {
-  return b.build_IE_url(e, c, !0);
+function I(e, s) {
+  return b.build_IE_url(e, s, !0);
 }
-function $(e, c) {
-  return e.reduce((i, { src: n, width: s, directives: r }) => {
-    const t = {
-      width: Number(s.replace("w", ""))
-    }, o = `${I(
-      c + n,
-      r ? {
-        ...r,
-        ...t
-      } : t
-    )} ${s},
+function O(e, s) {
+  return e.reduce((n, { src: c, width: i, directives: t }) => {
+    const r = {
+      width: Number(i.replace("w", ""))
+    }, a = `${I(
+      s + c,
+      t ? {
+        ...t,
+        ...r
+      } : r
+    )} ${i},
 `;
-    return i += o, i;
+    return n += a, n;
   }, "");
 }
-const S = [
+const v = [
   "png",
   "gif",
   "jpg",
@@ -119,11 +121,11 @@ const S = [
       throw new Error(
         "Please ensure that the image component has an 'src' prop."
       );
-    const c = l("deliveryAddress"), i = l("stripFromSrc");
+    const s = l("deliveryAddress"), n = l("stripFromSrc");
     return {
-      count: v(0),
-      deliveryAddress: c,
-      stripFromSrc: i
+      count: S(0),
+      deliveryAddress: s,
+      stripFromSrc: n
     };
   },
   computed: {
@@ -134,7 +136,7 @@ const S = [
       return I(this.imageUrl, this.directives);
     },
     srcSetString() {
-      return this.srcSet && $(this.srcSet, this.deliveryAddress);
+      return this.srcSet && O(this.srcSet, this.deliveryAddress);
     },
     imageUrl() {
       return this.deliveryAddress + (this.stripFromSrc ? this.src.replace(this.stripFromSrc, "") : this.src);
@@ -145,32 +147,32 @@ const S = [
     }
   },
   created() {
-    S.includes(
+    v.includes(
       this.imageExtension.toLowerCase()
     ) || console.warn(
       `The following image's extension doesn't match any of the allowed types and won't be optimized: ${this.src}.`,
-      `List of supported extensions: ${S.join(", ")}.`
+      `List of supported extensions: ${v.join(", ")}.`
     );
   }
-}), h = (e, c) => {
-  const i = e.__vccOpts || e;
-  for (const [n, s] of c)
-    i[n] = s;
-  return i;
+}), h = (e, s) => {
+  const n = e.__vccOpts || e;
+  for (const [c, i] of s)
+    n[c] = i;
+  return n;
 }, A = ["src", "srcSet"];
-function T(e, c, i, n, s, r) {
+function T(e, s, n, c, i, t) {
   return f(), m("img", y({
     src: e.computedDirectives,
     srcSet: e.srcSetString
   }, e.attributes), null, 16, A);
 }
-const B = /* @__PURE__ */ h(j, [["render", T]]), F = p({
+const B = /* @__PURE__ */ h(j, [["render", T]]), P = p({
   setup() {
-    const e = l("deliveryAddress"), c = l("stripFromSrc");
+    const e = l("deliveryAddress"), s = l("stripFromSrc");
     return {
-      count: v(0),
+      count: S(0),
       deliveryAddress: e,
-      stripFromSrc: c
+      stripFromSrc: s
     };
   },
   props: {
@@ -184,7 +186,7 @@ const B = /* @__PURE__ */ h(j, [["render", T]]), F = p({
   },
   computed: {
     srcSetString() {
-      return $(
+      return O(
         this.stripFromSrc ? this.srcSet.map((e) => ({
           ...e,
           src: e.src.replace(this.stripFromSrc, "")
@@ -193,11 +195,11 @@ const B = /* @__PURE__ */ h(j, [["render", T]]), F = p({
       );
     }
   }
-}), P = ["srcSet"];
-function D(e, c, i, n, s, r) {
-  return f(), m("source", y({ srcSet: e.srcSetString }, e.attributes), null, 16, P);
+}), F = ["srcSet"];
+function D(e, s, n, c, i, t) {
+  return f(), m("source", y({ srcSet: e.srcSetString }, e.attributes), null, 16, F);
 }
-const U = /* @__PURE__ */ h(F, [["render", D]]), q = p({
+const U = /* @__PURE__ */ h(P, [["render", D]]), q = p({
   props: {
     deliveryAddress: {
       type: String,
@@ -211,12 +213,12 @@ const U = /* @__PURE__ */ h(F, [["render", D]]), q = p({
     g("deliveryAddress", e.deliveryAddress), g("stripFromSrc", e.stripFromSrc);
   }
 });
-function C(e, c, i, n, s, r) {
+function M(e, s, n, c, i, t) {
   return f(), m("div", null, [
-    O(e.$slots, "default")
+    $(e.$slots, "default")
   ]);
 }
-const z = /* @__PURE__ */ h(q, [["render", C]]);
+const z = /* @__PURE__ */ h(q, [["render", M]]);
 export {
   B as Image,
   z as ImageEngineProvider,

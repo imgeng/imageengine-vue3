@@ -97,7 +97,7 @@ export default {
 </script>
 ```
 
-[Demo app on CodeSandbox](https://codesandbox.io/s/elegant-panka-nc66jq)
+[Demo app on CodeSandbox](https://codesandbox.io/p/sandbox/imageenginevue3demo-nc66jq)
 
 ## Component props reference
 
