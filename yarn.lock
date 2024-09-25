@@ -586,10 +586,10 @@
     estree-walker "^2.0.2"
     picomatch "^2.3.1"
 
-"@rushstack/eslint-patch@1.7.0":
-  version "1.7.0"
-  resolved "https://registry.npmjs.org/@rushstack/eslint-patch/-/eslint-patch-1.7.0.tgz"
-  integrity sha512-Jh4t/593gxs0lJZ/z3NnasKlplXT2f+4y/LZYuaKZW5KAaiVFL/fThhs+17EbUd53jUVJ0QudYCBGbN/psvaqg==
+"@rushstack/eslint-patch@1.10.4":
+  version "1.10.4"
+  resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.10.4.tgz#427d5549943a9c6fce808e39ea64dbe60d4047f1"
+  integrity sha512-WJgX9nzTqknM393q1QJDJmoW28kUfEnybeTfVNcNAPnIx210RXm2DiXiHzfNPJNIUUb1tJnz/l4QGtJ30PgWmA==
 
 "@rushstack/node-core-library@3.62.0":
   version "3.62.0"
